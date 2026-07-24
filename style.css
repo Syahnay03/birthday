@@ -1,0 +1,209 @@
+/* 1. Base Styles & Global Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    color: #ffffff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* 2. Glassmorphism Effect */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 2rem;
+}
+
+/* 3. Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 4. Navbar Transitions */
+.navbar {
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(15, 12, 41, 0.8) !important;
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+}
+
+/* 5. Custom Animations */
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 6. Text & Typography */
+.text-justify {
+    text-align: justify;
+}
+
+.accordion-body {
+    color: #ffffff !important;
+}
+
+/* 7. Responsive Adjustments */
+@media (max-width: 768px) {
+    .display-2 {
+        font-size: 2.5rem !important;
+    }
+    .hero-content {
+        padding: 0 5px;
+    }
+    .glassmorphism {
+        padding: 1.2rem;
+    }
+    .btn-lg {
+        padding: 0.5rem 1.5rem !important;
+        font-size: 1rem;
+    }
+}
+
+/* 8. Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #0f0c29;
+}
+::-webkit-scrollbar-thumb {
+    background: #302b63;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #24243e;
+}
+
+/* 9. Toast Styling (Dark Theme Override) */
+.toast {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toast-header {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toast .btn-close {
+    filter: invert(1);
+}
+
+/* 10. Footer Styling */
+.custom-footer {
+    background: rgba(15, 12, 41, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0d6efd;
+    padding-left: 5px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: #0d6efd;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* 11. Fade In Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 12. Heart Rain Effect */
+.heart-rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.falling-heart {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    display: inline-block;
+    animation: rainHeart 3s linear forwards;
+    will-change: transform;
+}
+
+@keyframes rainHeart {
+    to { transform: translateY(110vh) rotate(360deg); }
+}
