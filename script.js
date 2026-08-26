@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnKejutan.addEventListener('click', (e) => {
                 e.preventDefault();
                 // Ganti URL di bawah ini dengan link Dana Kaget Anda
-                const linkDanaKaget = 'https://link.dana.id/danakaget?c=sya5jdjby&r=fnPuEI&orderId=20260723101214535715010300166500089752065';
+                const linkDanaKaget = 'https://link.dana.id/danakaget?c=sge8vjtkz&r=fnPuEI&orderId=20260826101214171415010300166500095064318';
                 window.open(linkDanaKaget, '_blank');
             });
         }
